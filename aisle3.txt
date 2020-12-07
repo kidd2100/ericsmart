@@ -1,0 +1,6 @@
+Aisle 3
+1. Coffee 5.00
+2. Sugar 4.00
+3. Flour 2.00
+4. Bread 2.00
+5. Cake Mix 2.00

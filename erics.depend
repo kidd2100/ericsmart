@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1606357842 source:c:\users\wildd\onedrive\desktop\eric's projects\eric's store\updated eric's store\erics\main.cpp
+	<iostream>
+	<iomanip>
+
+1607190662 source:c:\users\wildd\onedrive\desktop\eric's projects\eric's store\updated eric's store\updated!!! store\main.cpp
+	<iostream>
+	<iomanip>
+	<stdlib.h>
+
