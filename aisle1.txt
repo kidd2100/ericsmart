@@ -1,6 +1,7 @@
 Aisle 1
-1. Canned Beans .50 
+1. Canned Beans .50
 2. Canned Corn .50
 3. Canned Green Beans .50
 4. Canned Peas
 5. Canned Pasta 1.00
+6. Canned Tomatoes 2.00

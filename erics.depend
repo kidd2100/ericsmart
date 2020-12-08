@@ -3,8 +3,11 @@
 	<iostream>
 	<iomanip>
 
-1607190662 source:c:\users\wildd\onedrive\desktop\eric's projects\eric's store\updated eric's store\updated!!! store\main.cpp
+1607401292 source:c:\users\wildd\onedrive\desktop\eric's projects\eric's store\updated eric's store\updated!!! store\main.cpp
 	<iostream>
 	<iomanip>
 	<stdlib.h>
+	<fstream>
+	<string>
+	<cctype>
 

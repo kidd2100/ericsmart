@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <fstream>
 #include <string>
+#include <cctype>
 
 using namespace std;
 double endOfProgram(double finalCustomerTotal, double totalCustomerFunds);
@@ -29,10 +30,33 @@ int main()
 
     cout << "How much cash do you have on you?: ";// Determining amount of funds customer has to spend
     cin >> customerCash;
+
+    while (cin.fail())  //while the data type declared doesn't match data type entered
+	{
+	cout << "Invalid input! How much cash do you have on you?:";  //error msg
+    cin.clear();
+    cin.ignore(1000, '\n');
+    cin >> customerCash;
+	}
+
     cout << "How much is on your debit card?: ";
     cin >> customerDebit;
+    while(cin.fail()){
+        cout << "Invalid input! How much is on your debit card?:";
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cin >> customerDebit;
+    }
+
     cout << "How much is on your credit card?: ";
     cin >> customerCredit;
+    while(cin.fail()){
+        cout << "Invalid input! How much is on your credit card?:";
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cin >> customerCredit;
+    }
+
     totalCustomerFunds = customerCash + customerCredit + customerDebit;
     cout << "\nThe total ammount you have to spend with us today is: $" << totalCustomerFunds << "\n\n";
 
@@ -101,6 +125,9 @@ int main()
         system ("CLS"); // Clears the screen of Previous information
         intro(); // Re-Applies Intro
     }
+
+
+
     //////////////////////////////////////////////////////////////////////////
     //Begin total of Customers transaction and inform of ammount spend
     //////////////////////////////////////////////////////////////////////////
@@ -119,8 +146,10 @@ double displayAisle1(){
      ifstream infile;
      infile.open("aisle1.txt");
      string aisleOneItems;
+     int counter = 0;
      while(getline(infile,  aisleOneItems)){
         cout << aisleOneItems << "\n";
+        counter++;
      }
      infile.close();
 
@@ -136,6 +165,12 @@ cout << "Aisle 1\n"
 
         cout << "\nType in the number for item you wish to purchase: ";
         cin >> userInput;
+        if(userInput < 1 || userInput > counter){
+        cout << "Invalid Input! Type in the number for item you wish to purchase: ";
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cin >> userInput;
+        }
 
             switch(userInput){
         case 1:
@@ -170,8 +205,10 @@ double displayAisle2(){
      ifstream infile;
      infile.open("aisle2.txt");
      string aisleTwoItems;
+     int counter = 0;
      while(getline(infile,  aisleTwoItems)){
         cout << aisleTwoItems << "\n";
+        counter++;
      }
      infile.close();
 /*
@@ -186,6 +223,13 @@ double displayAisle2(){
 
     cout << "\nType in the number for item you wish to purchase: ";
     cin >> userInput;
+        if(userInput < 1 || userInput > counter){
+        cout << "Invalid Input! Type in the number for item you wish to purchase: ";
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cin >> userInput;
+        }
+
 
     switch(userInput){
 case 1:
@@ -221,8 +265,10 @@ double displayAisle3(){
      ifstream infile;
      infile.open("aisle3.txt");
      string aisleThreeItems;
+     int counter = 0;
      while(getline(infile,  aisleThreeItems)){
         cout << aisleThreeItems << "\n";
+        counter++;
      }
      infile.close();
     /*
@@ -235,6 +281,13 @@ double displayAisle3(){
     */
     cout << "\nType in the number for item you wish to purchase: ";
     cin >> userInput;
+    if(userInput < 1 || userInput > counter){
+        cout << "Invalid Input! Type in the number for item you wish to purchase: ";
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cin >> userInput;
+        }
+
 
     switch(userInput){
 case 1:
@@ -266,6 +319,10 @@ default:
 
 
 int displayAisles(int aisle){
+
+
+
+
     cout << "**********************************************************\n";
     cout << "**********************************************************\n";
     cout << setw(18) <<  "Aisle1" << setw(20) <<"Aisle 2" << setw(20) << "Aisle 3\n";
@@ -274,7 +331,8 @@ int displayAisles(int aisle){
     cout << setw(18) << "Canned Green Beans" << setw(20) <<"White Rice" << setw(20) << "Flour\n";
     cout << setw(18) << "Canned Peas" << setw(20) <<"Brown Rice" << setw(20) << "Bread\n";
     cout << setw(18) << "Canned Pasta" << setw(20) <<"Boxed Potatoes" << setw(20) << "Cake Mix\n";
-    cout << "**********************************************************\n";
+    cout << setw(18) << "Canned Tomatoes" ;
+    cout << "\n**********************************************************\n";
     cout << "**********************************************************\n";
     cout << endl << endl;
     cout << "Which aisle would you like to go down?\n";
